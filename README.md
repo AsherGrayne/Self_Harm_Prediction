@@ -2,39 +2,39 @@
 
 An AI-powered predictive analytics system for mental health crisis prevention and early intervention. This project uses machine learning to identify patients at risk of self-harm or crisis, enabling healthcare providers to allocate resources effectively and provide timely interventions.
 
-## 🎯 Project Overview
+## Project Overview
 
 The Mental Health Risk Assessment System is designed to help mental health companies and healthcare providers:
 
-- **Predict crisis risk** using comprehensive patient data
-- **Enable early intervention** for high-risk patients
-- **Optimize resource allocation** for crisis prevention
-- **Provide clinical recommendations** based on risk levels
-- **Track population trends** over time
+- Predict crisis risk using comprehensive patient data
+- Enable early intervention for high-risk patients
+- Optimize resource allocation for crisis prevention
+- Provide clinical recommendations based on risk levels
+- Track population trends over time
 
-## 🚀 Features
+## Features
 
 ### Core Functionality
-- **Multi-algorithm risk prediction** (XGBoost, Random Forest, Logistic Regression, etc.)
-- **Comprehensive feature engineering** with clinical, behavioral, and environmental factors
-- **Real-time risk assessment** with probability scores
-- **Clinical recommendations** based on risk levels
-- **Interactive web interface** for healthcare professionals
-- **Professional PDF reports** with graphs and visualizations
+- Multi-algorithm risk prediction (XGBoost, Random Forest, Logistic Regression, etc.)
+- Comprehensive feature engineering with clinical, behavioral, and environmental factors
+- Real-time risk assessment with probability scores
+- Clinical recommendations based on risk levels
+- Interactive web interface for healthcare professionals
+- Professional PDF reports with graphs and visualizations
 
 ### Data Analysis
-- **Exploratory data analysis** with visualizations
-- **Feature importance analysis** for model interpretability
-- **Population trends tracking** over time
-- **Risk factor contribution analysis**
+- Exploratory data analysis with visualizations
+- Feature importance analysis for model interpretability
+- Population trends tracking over time
+- Risk factor contribution analysis
 
 ### Clinical Integration
-- **Standardized assessment scales** (PHQ-9, GAD-7, CSSRS, etc.)
-- **Treatment history tracking**
-- **Family history analysis**
-- **Environmental factor assessment**
+- Standardized assessment scales (PHQ-9, GAD-7, CSSRS, etc.)
+- Treatment history tracking
+- Family history analysis
+- Environmental factor assessment
 
-## 📊 Dataset
+## Dataset
 
 The system uses a comprehensive dataset with 50,000+ patient records including:
 
@@ -71,7 +71,7 @@ The system uses a comprehensive dataset with 50,000+ patient records including:
 ### Family History
 - Depression, anxiety, suicide, substance abuse
 
-## 🛠️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -95,17 +95,12 @@ The system uses a comprehensive dataset with 50,000+ patient records including:
    python data_generator.py
    ```
 
-4. **Train the models**
+4. **Run the web application**
    ```bash
-   python risk_assessment_model.py
+   streamlit run simple_app.py
    ```
 
-5. **Run the web application**
-   ```bash
-   streamlit run app.py
-   ```
-
-## 📈 Model Performance
+## Model Performance
 
 The system achieves the following performance metrics:
 
@@ -116,7 +111,7 @@ The system achieves the following performance metrics:
 | Gradient Boosting | 0.88 | 0.75 | 0.91 |
 | Logistic Regression | 0.85 | 0.72 | 0.88 |
 
-## 🎯 Usage
+## Usage
 
 ### Web Interface
 
@@ -129,31 +124,15 @@ The system achieves the following performance metrics:
    - Clinical recommendations
    - Patient summary
 
-### API Usage
+### Command Line Demo
 
-```python
-from risk_assessment_model import MentalHealthRiskAssessment
-
-# Initialize the system
-analyzer = MentalHealthRiskAssessment()
-
-# Load data and train models
-analyzer.load_data()
-analyzer.prepare_features()
-analyzer.train_models()
-
-# Make predictions
-patient_data = {
-    'age': 35,
-    'phq9_score': 15,
-    'gad7_score': 12,
-    # ... other features
-}
-
-risk_probability = analyzer.models['XGBoost'].predict_proba([patient_data])[0, 1]
+```bash
+python demo_model.py
 ```
 
-## 🔧 Configuration
+This provides a simplified command-line interface for testing the risk assessment system.
+
+## Configuration
 
 ### Model Parameters
 
@@ -170,7 +149,7 @@ The system uses optimized hyperparameters for each algorithm:
 - **High Risk**: 40-60% probability
 - **Critical Risk**: > 60% probability
 
-## 📊 Output Files
+## Output Files
 
 The system generates several output files:
 
@@ -179,7 +158,7 @@ The system generates several output files:
 - Risk assessment results - Real-time calculations and recommendations
 - Professional PDF reports with graphs, charts, and visualizations
 
-## 🏥 Clinical Integration
+## Clinical Integration
 
 ### Recommended Workflow
 
@@ -211,7 +190,7 @@ The system generates several output files:
 - Support group referral
 - Regular reassessment
 
-## 🔒 Privacy and Ethics
+## Privacy and Ethics
 
 ### Data Protection
 - All data is anonymized and de-identified
@@ -225,7 +204,7 @@ The system generates several output files:
 - Human oversight for all predictions
 - Regular model validation and updates
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Setup
 
@@ -239,15 +218,14 @@ The system generates several output files:
    pip install -r requirements.txt
    ```
 
-2. **Model Training**
+2. **Generate Dataset**
    ```bash
    python data_generator.py
-   python risk_assessment_model.py
    ```
 
 3. **Web Application**
    ```bash
-   streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+   streamlit run simple_app.py --server.port 8501 --server.address 0.0.0.0
    ```
 
 ### Docker Deployment
@@ -262,10 +240,20 @@ RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 8501
 
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "simple_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
 ```
 
-## 🤝 Contributing
+### Streamlit Cloud Deployment
+
+1. Push your code to GitHub
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Sign in with GitHub
+4. Click "New app"
+5. Select your repository
+6. Set main file path: `simple_app.py`
+7. Click "Deploy"
+
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -273,33 +261,33 @@ CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 This system is designed to assist healthcare professionals and should not replace clinical judgment. All predictions should be reviewed by qualified mental health professionals before making treatment decisions.
 
-## 📞 Support
+## Support
 
 For questions or support, please contact:
 - Email: support@mentalhealth-ai.com
 - Documentation: [Link to documentation]
 - Issues: [GitHub issues page]
 
-## 🔄 Updates
+## Updates
 
 ### Version 1.0.0
 - Initial release with core functionality
 - XGBoost, Random Forest, and Logistic Regression models
 - Web interface with Streamlit
 - Comprehensive dataset generation
+- PDF report generation with charts and visualizations
 
 ### Planned Features
 - Real-time data integration
 - Mobile application
 - Advanced NLP for text analysis
 - Integration with EHR systems
-- Multi-language support #   S e l f _ H a r m _ P r e d i c t i o n  
- 
+- Multi-language support
